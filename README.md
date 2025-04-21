@@ -18,3 +18,6 @@ Some datasets were provided in this folder, others are too large and can be down
 - MovieLens 20M: https://grouplens.org/datasets/movielens/20m/
 - KION: https://github.com/irsafilo/KION_DATASET
 
+Что-то вроде такой таблички с гораздо меньшим количеством моделей будет в резах вечером
+![alt text](image.png)
+
