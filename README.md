@@ -1,16 +1,10 @@
 # Defining transformer model architecture
+This repository contains source code for experiments conducted to determine optimal transformer architecture for recommender systems.
 
-Model implementation
+## Repository structure
 
-RecTools folder
-- Models
-    Model implementation can be found in RecTools folder. It contains content copied from https://github.com/MobileTeleSystems/RecTools.git that was done as a part of this project. In further experiments this functionality will be installed using pip install rectools[torch] to make it more comfortable. 
-- Examples
-    Shows example of how models can be used for fit/recommend and provides theoretical background
-
-Dataset folder
-
-Some datasets were provided in this folder, others are too large and can be downloaded by the links below.
+### Datasets folder
+Here datasets for experiment 1 are located, bigger datasets should be downloaded using following links:
 - ML-1M-bert: https://raw.githubusercontent.com/asash/BERT4rec_py3_tf2/master/BERT4rec/data/ml-1m.txt
 - Beauty: https://raw.githubusercontent.com/asash/BERT4rec_py3_tf2/master/BERT4rec/data/beauty.txt
 - Steam: https://raw.githubusercontent.com/asash/BERT4rec_py3_tf2/master/BERT4rec/data/steam.txt
@@ -18,6 +12,17 @@ Some datasets were provided in this folder, others are too large and can be down
 - MovieLens 20M: https://grouplens.org/datasets/movielens/20m/
 - KION: https://github.com/irsafilo/KION_DATASET
 
-Что-то вроде такой таблички с гораздо меньшим количеством моделей будет в резах вечером
-![alt text](image.png)
+### RecTools 
+#### models
+This folder contains code written for [RecTools](https://github.com/MobileTeleSystems/RecTools) library. To make experiments more convenient further it will be installed directly by calling ```pip install rectools[torch]```.
+#### examples
+Examples describe how to use transformer model developed, how to add item feature and shows figures from experiment 4.
 
+### modifications
+Contains modifications that were not released as a part of RecTools library.
+
+### Validation
+This notebook describes how experiments 2 and 3 were conducted.
+
+### Results
+Here reports for experiments 1, 2 and 3 can be found. Based on them insights about optimal transformer model were developed.
