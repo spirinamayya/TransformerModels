@@ -13,9 +13,9 @@ Here datasets for experiment 1 are located, bigger datasets should be downloaded
 - KION: https://github.com/irsafilo/KION_DATASET
 
 ### RecTools 
-- models
+- models.
 This folder contains code written for [RecTools](https://github.com/MobileTeleSystems/RecTools) library. To make experiments more convenient further it will be installed directly by calling ```pip install rectools[torch]```.
-- examples
+- examples.
 Examples describe how to use transformer model developed, how to add item feature and shows figures from experiment 4.
 
 ### modifications
