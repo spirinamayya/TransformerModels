@@ -249,25 +249,8 @@ class AllActionTransformerTorchBackbone(TransformerTorchBackbone):
     ) -> torch.Tensor:
         item_embs = self.item_model.get_all_embeddings()  # [n_items + n_item_extra_tokens, n_factors]
         session_embs = self.encode_sessions(batch, item_embs)  # [batch_size, session_max_len, n_factors]
-        # === Condition for train stage with negative sampling ===
-        # Also we can repeat every session `max_target_length` time, but it isn't optimal
-        # This solution reduce compution costs.
+       
         if max_target_length is not None:
             session_embs = session_embs[:, -1:, :].repeat(1, 1, max_target_length, 1).squeeze()
         logits = self.similarity_module(session_embs, item_embs, candidate_item_ids)
         return logits
-
-
-# DATA_PREPARATOR_KWARGS = {
-#     "last_k_days": 7,  # kwargs
-#     "max_k_actions": 32,  # kwargs
-#     "random_state": 17,  # kwargs
-# }
-
-# all_action_model = BERT4RecModel(
-#     data_preparator_type=AllActionDataPreparator,
-#     lightning_module_type=AllActionLightningModule,
-#     data_preparator_kwargs=DATA_PREPARATOR_KWARGS,
-#     backbone_type=AllActionTransformerTorchBackbone,
-#     use_causal_attn=True  # False (both work)
-# )

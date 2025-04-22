@@ -163,15 +163,3 @@ class DenseAllActionDataPreparator(SASRecDataPreparator):
             )  # [batch_size, session_max_len, n_negatives]
             batch_dict["negatives"] = negatives
         return batch_dict
-
-
-
-# DATA_PREPARATOR_KWARGS = {
-#     "targets_window_days": 7,
-# }
-
-# dense_all_action_model = SASRecModel(
-#     data_preparator_type=DenseAllActionDataPreparator,
-#     data_preparator_kwargs=DATA_PREPARATOR_KWARGS,
-#     use_causal_attn=True,  # as in paper PinnerFormer but suddenly False also works
-# )
