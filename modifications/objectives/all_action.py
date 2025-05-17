@@ -30,9 +30,9 @@ class AllActionDataPreparator(BERT4RecDataPreparator):
         mask_prob: float = 0.15,
         shuffle_train: bool = True,
         get_val_mask_func: tp.Optional[ValMaskCallable] = None,
-        last_k_days: int = 7,  # kwargs
-        max_k_actions: int = 32,  # kwargs
-        random_state: int = 17,  # kwargs
+        last_k_days: int = 7,  
+        max_k_actions: int = 32, 
+        random_state: int = 17, 
     ) -> None:
         super().__init__(
             session_max_len=session_max_len,
